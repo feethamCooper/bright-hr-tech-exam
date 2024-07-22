@@ -1,0 +1,100 @@
+@import "variables.scss";
+
+html {
+  font-family: $font-family-one;
+  font-weight: normal;
+  font-size: $font-size-base;
+  color: $color-one;
+}
+
+h1,
+h2,
+h3 {
+  font-family: $font-family-two;
+}
+
+h1 {
+  font-size: 5rem;
+  font-weight: normal;
+  line-height: 1;
+  text-transform: uppercase;
+  text-decoration: line-through;
+  text-shadow: 2px -4px 6px red;
+  text-align: center;
+}
+
+h1 + p {
+  font-size: 2rem;
+}
+
+p {
+  margin-bottom: calc($spacing / 2);
+}
+
+li {
+  margin-bottom: calc($spacing / 2);
+}
+
+em {
+  font-weight: bold;
+  font-style: normal;
+}
+
+span {
+  font-style: italic;
+}
+
+strong {
+  font-weight: bold;
+}
+
+ul {
+  /*font-size: 1.5em;*/
+}
+
+li {
+  /*font-size: 2em;*/
+}
+
+li:last-child {
+  /*font-size: 0.5rem;*/
+}
+
+a,
+a:link {
+  color: darkgreen;
+  /*text-decoration: none;*/
+}
+
+a:visited {
+  color: limegreen;
+}
+
+a:hover {
+  color: orange;
+}
+
+a:focus {
+  color: blue;
+}
+
+a:active {
+  color: red;
+}
+
+ol {
+  list-style-type: none;
+}
+
+button,
+a,
+input {
+  font-size: 1rem;
+}
+
+button,
+a {
+  &:hover {
+    cursor: pointer;
+  }
+}
