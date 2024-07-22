@@ -3,6 +3,7 @@ import useSort from "hooks/useSort";
 import AbsencesTable from "components/AbsencesTable";
 import AbsencesSort from "components/AbsencesSort";
 import IndavidualAbsencesModal from "components/Modal/IndavidualAbsencesModal";
+import "./App.scss";
 
 function App() {
   const { absences, conflicts } = useBrightHrApi();

@@ -94,7 +94,19 @@ input {
 
 button,
 a {
+  border: 0;
+  background-color: transparent;
   &:hover {
     cursor: pointer;
   }
+}
+
+table {
+  font-size: $font-size-base;
+  color: $color-nine;
+}
+
+thead {
+  color: $color-one;
+  background-color: $color-nine;
 }

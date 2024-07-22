@@ -9,13 +9,12 @@
   z-index: 9999;
   text-align: center;
   padding: $spacing;
-  color: $color-two;
-  font-size: calc($font-size-base * 1.5);
   background-color: $color-one;
 
   &__content {
     display: flex;
     flex-direction: column;
+    margin-top: $spacing * 3;
   }
 
   &__close {
@@ -26,6 +25,7 @@
     font-size: 0;
     background-color: $color-nine;
     border: 0;
+    cursor: pointer;
 
     svg {
       height: $spacing;
