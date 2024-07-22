@@ -48,7 +48,7 @@ const AbsencesTableRow = ({
       <td className="absences-table__td">
         {luxonDateObject.plus({ days: absence.days }).toFormat("dd MMM yyyy")}
       </td>
-      <td>{conflicting?.conflicts ? "Conflict" : "OK"}</td>
+      <td>{conflicting?.conflicts ? "Yes" : "No"}</td>
     </tr>
   );
 };
