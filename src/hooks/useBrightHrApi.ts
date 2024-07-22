@@ -17,7 +17,6 @@ const useBrightHrApi = () => {
   const conflicts = useBrightHrApiStore((state) => state.conflicts);
   const setAbsences = useBrightHrApiStore((state) => state.setAbsences);
   const setConflicts = useBrightHrApiStore((state) => state.setConflicts);
-
   const handleGetAbsences = useCallback(async () => {
     const dataReady = absences.length !== 0;
     if (dataReady) return;

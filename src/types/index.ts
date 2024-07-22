@@ -13,6 +13,7 @@ export interface IAbsenceAPIData {
   id?: string;
   absenceType?: TAbsenceType;
   approved?: boolean;
+  startDate?: string;
   days?: number;
   employee?: {
     firstName?: string;
@@ -33,6 +34,7 @@ export interface IAbsence {
   employeeFirstName: string;
   employeeLastName: string;
   employeeId: string;
+  startDate: number;
 }
 
 export interface IConflict {

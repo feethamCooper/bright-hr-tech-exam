@@ -1,0 +1,18 @@
+@import "variables.scss";
+
+.absences-table {
+  overflow-x: auto;
+
+  &__table {
+    border-collapse: collapse;
+    border-spacing: 0;
+    width: 100%;
+    border: 1px solid #ddd;
+  }
+
+  &__th,
+  &__td {
+    text-align: left;
+    padding: 8px;
+  }
+}

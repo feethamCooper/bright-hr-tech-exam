@@ -9,4 +9,5 @@ export const API_QUERIES = {
 export const ABSENCE_TYPES = {
   ANNUAL_LEAVE: "ANNUAL_LEAVE",
   SICKNESS: "SICKNESS",
+  MEDICAL: "MEDICAL",
 };

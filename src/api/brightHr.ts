@@ -1,3 +1,4 @@
+import { DateTime } from "luxon";
 import { IAbsence, IAbsenceAPIData, IConflictAPIData } from "types";
 import { tryAndCatch, onError } from "utils";
 import { BRIGHT_HR_API_BASE, API_QUERIES } from "utils/constants";
@@ -28,6 +29,7 @@ export const getAbsences = async (): Promise<IAbsence[]> => {
       absence?.absenceType !== undefined &&
       absence?.approved !== undefined &&
       absence?.days !== undefined &&
+      absence?.startDate !== undefined &&
       absence?.employee?.firstName !== undefined &&
       absence?.employee?.lastName !== undefined &&
       absence?.employee?.id !== undefined
@@ -37,9 +39,10 @@ export const getAbsences = async (): Promise<IAbsence[]> => {
         type: absence.absenceType,
         approved: absence.approved,
         days: absence.days,
+        startDate: DateTime.fromISO(absence.startDate).toSeconds(),
         employeeFirstName: absence.employee.firstName,
         employeeLastName: absence.employee.lastName,
-        employeeId: absence.employee?.id,
+        employeeId: absence.employee.id,
       });
     }
   }
