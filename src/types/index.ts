@@ -1,5 +1,3 @@
-import { ABSENCE_TYPES } from "utils/constants";
-
 export interface IUseBrightHrApiStore {
   absences: IAbsence[];
   conflicts: IConflict[] | undefined;
