@@ -10,6 +10,12 @@
     border: 1px solid #ddd;
   }
 
+  &__tr {
+    &--conflict {
+      background: $color-eight;
+    }
+  }
+
   &__th,
   &__td {
     text-align: left;

@@ -1,10 +1,10 @@
 import { DateTime } from "luxon";
 import useBrightHrApi from "hooks/useBrightHrApi";
-import "./AbsencesTable.module.scss";
+
+import "./AbsencesTable.scss";
 
 const AbsencesTable = () => {
   const { absences, conflicts } = useBrightHrApi();
-
   return (
     <div className="absences-table">
       <table className="absences-table__table">
@@ -25,7 +25,12 @@ const AbsencesTable = () => {
               (conflict) => conflict.absencesId === absence.id
             );
             return (
-              <tr key={index}>
+              <tr
+                key={index}
+                className={`absences-table__tr ${
+                  conflicting?.conflicts ? "absences-table__tr--conflict" : ""
+                }`}
+              >
                 <td className="absences-table__td">
                   {absence.employeeFirstName} {absence.employeeLastName}
                 </td>
