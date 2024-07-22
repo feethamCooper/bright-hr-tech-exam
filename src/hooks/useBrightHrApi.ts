@@ -50,9 +50,6 @@ const useBrightHrApi = () => {
   }, [absences.length, addToEndpointsCalled, setAbsences]);
 
   const handleGetConflicts = useCallback(async () => {
-    const dataReady = conflicts !== undefined;
-    if (dataReady) return;
-
     const cachedData = getItemFromLocalStorage(API_QUERIES.CONFLICT);
 
     if (cachedData !== null) {
@@ -67,20 +64,26 @@ const useBrightHrApi = () => {
 
         const conflicting = await getConflict(absence.id);
 
-        let conflictUpdate: IConflict[] = conflicts ? conflicts : [];
-        conflictUpdate = [
-          ...conflictUpdate,
-          {
-            absencesId: absence.id,
-            conflicts: conflicting || false,
-          },
-        ];
+        if (
+          conflicting &&
+          !conflicts?.find((conflict) => conflict.absencesId === absence.id)
+        ) {
+          let conflictUpdate: IConflict[] = conflicts ? conflicts : [];
 
-        setConflicts(conflictUpdate);
-        setItemInLocalStorage(
-          API_QUERIES.CONFLICT,
-          JSON.stringify(conflictUpdate)
-        );
+          conflictUpdate = [
+            ...conflictUpdate,
+            {
+              absencesId: absence.id,
+              conflicts: conflicting || false,
+            },
+          ];
+
+          setConflicts(conflictUpdate);
+          setItemInLocalStorage(
+            API_QUERIES.CONFLICT,
+            JSON.stringify(conflictUpdate)
+          );
+        }
       }
     }
   }, [absences, addToEndpointsCalled, conflicts, setConflicts]);
@@ -91,7 +94,7 @@ const useBrightHrApi = () => {
     }
     if (absences.length !== 0 && !conflicts) handleGetConflicts();
   };
-
+  console.log("conflicts", conflicts);
   return {
     absences,
     conflicts,
