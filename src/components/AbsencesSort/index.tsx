@@ -1,8 +1,8 @@
-import useBrightHrApi from "hooks/useBrightHrApi";
+import useSort from "hooks/useSort";
 import { SORT_BY } from "utils/constants";
 
 const AbsencesSort = () => {
-  const { sortBy, setSortBy } = useBrightHrApi();
+  const { sortBy, setSortBy } = useSort();
 
   return (
     <>

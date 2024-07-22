@@ -3,9 +3,12 @@ import { ABSENCE_TYPES } from "utils/constants";
 export interface IUseBrightHrApiStore {
   absences: IAbsence[];
   conflicts: IConflict[] | undefined;
-  sortBy: string;
   setAbsences: (absences: IAbsence[]) => void;
   setConflicts: (conflicts: IConflict[]) => void;
+}
+
+export interface IUseSortStore {
+  sortBy: string;
   setSortBy: (sortBy: string) => void;
 }
 

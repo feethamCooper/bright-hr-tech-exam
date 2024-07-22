@@ -1,10 +1,14 @@
-import useBrightHrApi from "hooks/useBrightHrApi";
 import AbsencesTableRow from "./AbsencesTableRow";
+import { IAbsence, IConflict } from "types";
 
 import "./AbsencesTable.scss";
 
-const AbsencesTable = () => {
-  const { sortedAbsences, conflicts } = useBrightHrApi();
+interface IAbsencesTable {
+  absences: IAbsence[];
+  conflicts?: IConflict[];
+}
+
+const AbsencesTable = ({ absences, conflicts }: IAbsencesTable) => {
   return (
     <div className="absences-table">
       <table className="absences-table__table">
@@ -19,7 +23,7 @@ const AbsencesTable = () => {
           </tr>
         </thead>
         <tbody>
-          {sortedAbsences.map((absence, index) => (
+          {absences.map((absence, index) => (
             <AbsencesTableRow
               key={index}
               absence={absence}
