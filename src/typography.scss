@@ -48,40 +48,6 @@ strong {
   font-weight: bold;
 }
 
-ul {
-  /*font-size: 1.5em;*/
-}
-
-li {
-  /*font-size: 2em;*/
-}
-
-li:last-child {
-  /*font-size: 0.5rem;*/
-}
-
-a,
-a:link {
-  color: darkgreen;
-  /*text-decoration: none;*/
-}
-
-a:visited {
-  color: limegreen;
-}
-
-a:hover {
-  color: orange;
-}
-
-a:focus {
-  color: blue;
-}
-
-a:active {
-  color: red;
-}
-
 ol {
   list-style-type: none;
 }
@@ -99,6 +65,13 @@ a {
   &:hover {
     cursor: pointer;
   }
+}
+
+select {
+  padding: $spacing / 2;
+  font-size: $font-size-base;
+  color: $color-nine;
+  margin-bottom: $spacing / 2;
 }
 
 table {
