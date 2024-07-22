@@ -1,25 +1,42 @@
+import useEmployeeSelection from "hooks/useEmployeeSelection";
 import { DateTime } from "luxon";
 import { IAbsence, IConflict } from "types";
 
 interface IAbsencesTableRow {
   absence: IAbsence;
   conflicts?: IConflict[];
+  enabledEmployeeSelection: boolean;
 }
 
-const AbsencesTableRow = ({ absence, conflicts }: IAbsencesTableRow) => {
+const AbsencesTableRow = ({
+  absence,
+  conflicts,
+  enabledEmployeeSelection,
+}: IAbsencesTableRow) => {
+  const { setSelectedEmployeeId } = useEmployeeSelection();
   const luxonDateObject = DateTime.fromSeconds(absence.startDate);
   const conflicting = conflicts?.find(
     (conflict) => conflict.absencesId === absence.id
   );
+
+  const renderEmployeeName = () => {
+    if (enabledEmployeeSelection)
+      return (
+        <button onClick={() => setSelectedEmployeeId(absence.employeeId)}>
+          {absence.employeeFirstName} {absence.employeeLastName}
+        </button>
+      );
+
+    return `${absence.employeeFirstName} ${absence.employeeLastName}`;
+  };
+
   return (
     <tr
       className={`absences-table__tr ${
         conflicting?.conflicts ? "absences-table__tr--conflict" : ""
       }`}
     >
-      <td className="absences-table__td">
-        {absence.employeeFirstName} {absence.employeeLastName}
-      </td>
+      <td className="absences-table__td">{renderEmployeeName()}</td>
       <td className="absences-table__td">{absence.type.toString()}</td>
       <td className="absences-table__td">
         {absence.approved ? "Approved" : "Pending"}

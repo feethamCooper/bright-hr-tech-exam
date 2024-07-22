@@ -12,6 +12,11 @@ export interface IUseSortStore {
   setSortBy: (sortBy: string) => void;
 }
 
+export interface IUseEmployeeSelection {
+  selectedEmployeeId?: string;
+  setSelectedEmployeeId: (selectedEmployeeId?: string) => void;
+}
+
 export type TAbsenceType = typeof ABSENCE_TYPES;
 
 export interface IAbsenceAPIData {

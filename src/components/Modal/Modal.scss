@@ -1,0 +1,44 @@
+@import "variables.scss";
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 9999;
+  text-align: center;
+  padding: $spacing;
+  color: $color-two;
+  font-size: calc($font-size-base * 1.5);
+  background-color: $color-one;
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__close {
+    position: absolute;
+    top: $spacing;
+    right: $spacing;
+    padding: 0;
+    font-size: 0;
+    background-color: $color-nine;
+    border: 0;
+
+    svg {
+      height: $spacing;
+      width: $spacing;
+      margin: calc($spacing / 2);
+      fill: $color-one;
+    }
+
+    &:hover {
+      background-color: $color-one;
+      svg {
+        fill: $color-nine;
+      }
+    }
+  }
+}
