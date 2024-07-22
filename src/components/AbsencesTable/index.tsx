@@ -15,12 +15,15 @@ const AbsencesTable = () => {
             <th className="absences-table__th">Approved/Pending Approval</th>
             <th className="absences-table__th">Start Date</th>
             <th className="absences-table__th">End Date</th>
+            <th className="absences-table__th">Conflict</th>
           </tr>
         </thead>
         <tbody>
           {absences.map((absence, index) => {
             const luxonDateObject = DateTime.fromSeconds(absence.startDate);
-
+            const conflicting = conflicts?.find(
+              (conflict) => conflict.absencesId === absence.id
+            );
             return (
               <tr key={index}>
                 <td className="absences-table__td">
@@ -40,6 +43,7 @@ const AbsencesTable = () => {
                     .plus({ days: absence.days })
                     .toFormat("dd MMM yyyy")}
                 </td>
+                <td>{conflicting?.conflicts ? "Conflict" : "OK"}</td>
               </tr>
             );
           })}
