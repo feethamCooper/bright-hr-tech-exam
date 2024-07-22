@@ -17,7 +17,7 @@ export interface IUseEmployeeSelection {
   setSelectedEmployeeId: (selectedEmployeeId?: string) => void;
 }
 
-export type TAbsenceType = typeof ABSENCE_TYPES;
+export type TAbsenceType = "ANNUAL_LEAVE" | "SICKNESS" | "MEDICAL";
 
 export interface IAbsenceAPIData {
   id?: string;

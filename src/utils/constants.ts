@@ -7,9 +7,9 @@ export const API_QUERIES = {
 };
 
 export const ABSENCE_TYPES = {
-  ANNUAL_LEAVE: "ANNUAL_LEAVE",
-  SICKNESS: "SICKNESS",
-  MEDICAL: "MEDICAL",
+  ANNUAL_LEAVE: "Annual Leave",
+  SICKNESS: "Sickness",
+  MEDICAL: "Medical",
 };
 
 export const SORT_BY = {

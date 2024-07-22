@@ -1,5 +1,6 @@
 import useEmployeeSelection from "hooks/useEmployeeSelection";
 import { DateTime } from "luxon";
+import { ABSENCE_TYPES } from "utils/constants";
 import { IAbsence, IConflict } from "types";
 
 interface IAbsencesTableRow {
@@ -37,7 +38,7 @@ const AbsencesTableRow = ({
       }`}
     >
       <td className="absences-table__td">{renderEmployeeName()}</td>
-      <td className="absences-table__td">{absence.type.toString()}</td>
+      <td className="absences-table__td">{ABSENCE_TYPES[absence.type]}</td>
       <td className="absences-table__td">
         {absence.approved ? "Approved" : "Pending"}
       </td>
