@@ -1,0 +1,41 @@
+import { ABSENCE_TYPES } from "utils/constants";
+
+export interface IUseBrightHrApiStore {
+  absences: IAbsence[];
+  conflicts: IConflict[] | undefined;
+  setAbsences: (absences: IAbsence[]) => void;
+  setConflicts: (conflicts: IConflict[]) => void;
+}
+
+export type TAbsenceType = typeof ABSENCE_TYPES;
+
+export interface IAbsenceAPIData {
+  id?: string;
+  absenceType?: TAbsenceType;
+  approved?: boolean;
+  days?: number;
+  employee?: {
+    firstName?: string;
+    lastName?: string;
+    id?: string;
+  };
+}
+
+export interface IConflictAPIData {
+  conflicts: boolean;
+}
+
+export interface IAbsence {
+  id: string;
+  type: TAbsenceType;
+  approved: boolean;
+  days: number;
+  employeeFirstName: string;
+  employeeLastName: string;
+  employeeId: string;
+}
+
+export interface IConflict {
+  absencesId: string;
+  conflicts: boolean;
+}
