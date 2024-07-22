@@ -1,7 +1,43 @@
 import { DateTime } from "luxon";
 import useBrightHrApi from "hooks/useBrightHrApi";
+import { IAbsence, IConflict } from "types";
 
 import "./AbsencesTable.scss";
+
+const AbsencesTableRow = ({
+  absence,
+  conflicts,
+}: {
+  absence: IAbsence;
+  conflicts?: IConflict[];
+}) => {
+  const luxonDateObject = DateTime.fromSeconds(absence.startDate);
+  const conflicting = conflicts?.find(
+    (conflict) => conflict.absencesId === absence.id
+  );
+  return (
+    <tr
+      className={`absences-table__tr ${
+        conflicting?.conflicts ? "absences-table__tr--conflict" : ""
+      }`}
+    >
+      <td className="absences-table__td">
+        {absence.employeeFirstName} {absence.employeeLastName}
+      </td>
+      <td className="absences-table__td">{absence.type.toString()}</td>
+      <td className="absences-table__td">
+        {absence.approved ? "Approved" : "Pending"}
+      </td>
+      <td className="absences-table__td">
+        {luxonDateObject.toFormat("dd MMM yyyy")}
+      </td>
+      <td className="absences-table__td">
+        {luxonDateObject.plus({ days: absence.days }).toFormat("dd MMM yyyy")}
+      </td>
+      <td>{conflicting?.conflicts ? "Conflict" : "OK"}</td>
+    </tr>
+  );
+};
 
 const AbsencesTable = () => {
   const { absences, conflicts } = useBrightHrApi();
@@ -19,39 +55,9 @@ const AbsencesTable = () => {
           </tr>
         </thead>
         <tbody>
-          {absences.map((absence, index) => {
-            const luxonDateObject = DateTime.fromSeconds(absence.startDate);
-            const conflicting = conflicts?.find(
-              (conflict) => conflict.absencesId === absence.id
-            );
-            return (
-              <tr
-                key={index}
-                className={`absences-table__tr ${
-                  conflicting?.conflicts ? "absences-table__tr--conflict" : ""
-                }`}
-              >
-                <td className="absences-table__td">
-                  {absence.employeeFirstName} {absence.employeeLastName}
-                </td>
-                <td className="absences-table__td">
-                  {absence.type.toString()}
-                </td>
-                <td className="absences-table__td">
-                  {absence.approved ? "Approved" : "Pending"}
-                </td>
-                <td className="absences-table__td">
-                  {luxonDateObject.toFormat("dd MMM yyyy")}
-                </td>
-                <td className="absences-table__td">
-                  {luxonDateObject
-                    .plus({ days: absence.days })
-                    .toFormat("dd MMM yyyy")}
-                </td>
-                <td>{conflicting?.conflicts ? "Conflict" : "OK"}</td>
-              </tr>
-            );
-          })}
+          {absences.map((absence) => (
+            <AbsencesTableRow absence={absence} conflicts={conflicts} />
+          ))}
         </tbody>
       </table>
     </div>
