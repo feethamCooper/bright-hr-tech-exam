@@ -11,3 +11,9 @@ export const ABSENCE_TYPES = {
   SICKNESS: "SICKNESS",
   MEDICAL: "MEDICAL",
 };
+
+export const SORT_BY = {
+  NAME: "name",
+  ABSENCE_TYPE: "absence_type",
+  DATE: "date",
+};

@@ -3,8 +3,10 @@ import { ABSENCE_TYPES } from "utils/constants";
 export interface IUseBrightHrApiStore {
   absences: IAbsence[];
   conflicts: IConflict[] | undefined;
+  sortBy: string;
   setAbsences: (absences: IAbsence[]) => void;
   setConflicts: (conflicts: IConflict[]) => void;
+  setSortBy: (sortBy: string) => void;
 }
 
 export type TAbsenceType = typeof ABSENCE_TYPES;
