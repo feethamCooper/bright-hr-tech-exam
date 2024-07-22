@@ -40,7 +40,6 @@ const useBrightHrApi = () => {
     const dataReady = conflicts !== undefined;
     if (dataReady) return;
 
-    // Cache API response in local storage
     const cachedData = getItemFromLocalStorage(API_QUERIES.CONFLICT);
     if (cachedData !== null) {
       setConflicts(JSON.parse(cachedData));
@@ -71,9 +70,6 @@ const useBrightHrApi = () => {
       handleGetConflicts();
     }
   }, [absences, conflicts, handleGetAbsences, handleGetConflicts]);
-
-  console.log("absences", absences);
-  console.log("conflicts", conflicts);
 
   return {
     absences,
