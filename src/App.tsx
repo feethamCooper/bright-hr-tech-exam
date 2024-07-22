@@ -8,7 +8,7 @@ import "./App.scss";
 function App() {
   const { absences, conflicts } = useBrightHrApi();
   const { sortedAbsences } = useSort();
-  const loading = absences.length === 0 && !conflicts;
+  const loading = absences.length === 0 || !conflicts;
 
   return (
     <div className="App">
