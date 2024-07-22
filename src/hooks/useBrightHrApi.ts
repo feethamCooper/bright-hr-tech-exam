@@ -1,8 +1,8 @@
 import { useEffect, useCallback, useMemo } from "react";
 import { create } from "zustand";
 import { getAbsences, getConflict } from "api/brightHr";
-import { API_QUERIES, SORT_BY } from "utils/constants";
 import { setItemInLocalStorage, getItemFromLocalStorage } from "utils";
+import { API_QUERIES, SORT_BY } from "utils/constants";
 import { IUseBrightHrApiStore } from "types";
 
 const useBrightHrApiStore = create<IUseBrightHrApiStore>((set) => ({
