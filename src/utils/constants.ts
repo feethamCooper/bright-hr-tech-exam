@@ -23,6 +23,6 @@ export const SORT_BY = {
   },
   date: {
     key: "DATE",
-    label: "Data",
+    label: "Date",
   },
 };
