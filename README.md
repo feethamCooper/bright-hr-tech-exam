@@ -2,6 +2,14 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+# About
+
+Data handling including API calls and caching (via localStorage) is handled by the useBrightHrApi hook. They are also 2 other hooks useEmployeeSelection & useSort that handle their aspects of the app. But all hooks use Zustand for they respective state manangement.
+
+The app has some basic sorting functionlity provided by useSort hook and the AbsencesSort component.
+
+The app provides functionlity to inspect specific employees absences by clicking the employees name (in the absences table), that opens a modal displaying a selected employees specific absences.
+
 ## Available Scripts
 
 In the project directory, you can run:
