@@ -12,9 +12,14 @@ The app has some basic sorting functionlity provided by useSort hook and the Abs
 
 The app provides functionlity to inspect specific employees absences by clicking the employees name (in the absences table), that opens a modal displaying a selected employees specific absences.
 
+There is also 2 demo tests in:
+
 ## Available Scripts
 
 In the project directory, you can run:
+
+- src/components/AbsencesTable/AbsencesTable.test.tsx
+- src/hooks/useBrightHrApi.test.ts
 
 ### `npm start`
 
