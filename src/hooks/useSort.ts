@@ -5,7 +5,7 @@ import { SORT_BY } from "utils/constants";
 import { IUseSortStore } from "types";
 
 const useSortStore = create<IUseSortStore>((set) => ({
-  sortBy: SORT_BY.NAME,
+  sortBy: SORT_BY.name.key,
   setSortBy: (sortBy) => set({ sortBy }),
 }));
 
@@ -15,19 +15,19 @@ const useSort = () => {
   const setSortBy = useSortStore((state) => state.setSortBy);
 
   const sortedAbsences = useMemo(() => {
-    if (sortBy === SORT_BY.NAME) {
+    if (sortBy === SORT_BY.name.key) {
       return absences.sort((a, b) =>
         a.employeeFirstName.localeCompare(b.employeeFirstName)
       );
     }
 
-    if (sortBy === SORT_BY.ABSENCE_TYPE) {
+    if (sortBy === SORT_BY.absence_type.key) {
       return absences.sort((a, b) =>
         a.type.toString().localeCompare(b.type.toString())
       );
     }
 
-    if (sortBy === SORT_BY.DATE.toString()) {
+    if (sortBy === SORT_BY.date.key) {
       return absences.sort((a, b) => a.startDate - b.startDate);
     }
 

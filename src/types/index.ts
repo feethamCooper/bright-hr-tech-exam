@@ -1,3 +1,5 @@
+import { ABSENCE_TYPES } from "utils/constants";
+
 export interface IUseBrightHrApiStore {
   absences: IAbsence[];
   conflicts: IConflict[] | undefined;
@@ -15,7 +17,7 @@ export interface IUseEmployeeSelection {
   setSelectedEmployeeId: (selectedEmployeeId?: string) => void;
 }
 
-export type TAbsenceType = "ANNUAL_LEAVE" | "SICKNESS" | "MEDICAL";
+export type TAbsenceType = keyof typeof ABSENCE_TYPES;
 
 export interface IAbsenceAPIData {
   id?: string;

@@ -3,6 +3,7 @@ import { SORT_BY } from "utils/constants";
 
 const AbsencesSort = () => {
   const { sortBy, setSortBy } = useSort();
+  const sortByKeys = Object.keys(SORT_BY) as unknown as [keyof typeof SORT_BY];
 
   return (
     <>
@@ -13,11 +14,14 @@ const AbsencesSort = () => {
         value={sortBy}
         onChange={(e) => setSortBy(e.target.value)}
       >
-        {Object.keys(SORT_BY).map((value, index) => (
-          <option key={index} value={value.toLocaleLowerCase()}>
-            {value}
-          </option>
-        ))}
+        {sortByKeys.map((value) => {
+          const { key, label } = SORT_BY[value];
+          return (
+            <option key={key} value={key}>
+              {label}
+            </option>
+          );
+        })}
       </select>
     </>
   );

@@ -13,7 +13,16 @@ export const ABSENCE_TYPES = {
 };
 
 export const SORT_BY = {
-  NAME: "name",
-  ABSENCE_TYPE: "absence_type",
-  DATE: "date",
+  name: {
+    key: "NAME",
+    label: "Name",
+  },
+  absence_type: {
+    key: "ABSENCE_TYPE",
+    label: "Absence Type",
+  },
+  date: {
+    key: "DATE",
+    label: "Data",
+  },
 };
