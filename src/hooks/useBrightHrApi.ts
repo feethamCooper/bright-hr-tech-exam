@@ -94,7 +94,7 @@ const useBrightHrApi = () => {
     }
     if (absences.length !== 0 && !conflicts) handleGetConflicts();
   };
-  console.log("conflicts", conflicts);
+
   return {
     absences,
     conflicts,
