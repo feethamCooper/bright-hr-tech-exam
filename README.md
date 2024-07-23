@@ -14,12 +14,12 @@ The app provides functionlity to inspect specific employees absences by clicking
 
 There is also 2 demo tests in:
 
+- src/components/AbsencesTable/AbsencesTable.test.tsx
+- src/hooks/useBrightHrApi.test.ts
+
 ## Available Scripts
 
 In the project directory, you can run:
-
-- src/components/AbsencesTable/AbsencesTable.test.tsx
-- src/hooks/useBrightHrApi.test.ts
 
 ### `npm start`
 
