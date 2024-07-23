@@ -33,6 +33,7 @@ const AbsencesTableRow = ({
 
   return (
     <tr
+      data-testid="absences-table__tr"
       className={`absences-table__tr ${
         conflicting?.conflicts ? "absences-table__tr--conflict" : ""
       }`}

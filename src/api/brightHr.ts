@@ -51,7 +51,7 @@ export const getAbsences = async (): Promise<IAbsence[]> => {
 };
 
 export const getConflict = async (
-  absencesId: string
+  absencesId: number
 ): Promise<boolean | undefined> => {
   const conflictData: IConflictAPIData = await queryBrightHrApi(
     `${API_QUERIES.CONFLICT}/${absencesId}`

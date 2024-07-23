@@ -20,7 +20,7 @@ export interface IUseEmployeeSelection {
 export type TAbsenceType = keyof typeof ABSENCE_TYPES;
 
 export interface IAbsenceAPIData {
-  id?: string;
+  id?: number;
   absenceType?: TAbsenceType;
   approved?: boolean;
   startDate?: string;
@@ -37,7 +37,7 @@ export interface IConflictAPIData {
 }
 
 export interface IAbsence {
-  id: string;
+  id: number;
   type: TAbsenceType;
   approved: boolean;
   days: number;
@@ -48,6 +48,6 @@ export interface IAbsence {
 }
 
 export interface IConflict {
-  absencesId: string;
+  absencesId: number;
   conflicts: boolean;
 }
