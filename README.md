@@ -2,6 +2,8 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+A deployed version can be found @ https://bright-hr.cooperfeetham.com/
+
 # About
 
 Data handling including API calls and caching (via localStorage) is handled by the useBrightHrApi hook. They are also 2 other hooks useEmployeeSelection & useSort that handle their aspects of the app. But all hooks use Zustand for they respective state manangement.
