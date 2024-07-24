@@ -1,9 +1,10 @@
+import { FC } from "react";
 import useEmployeeSelection from "hooks/useEmployeeSelection";
 import useBrightHrApi from "hooks/useBrightHrApi";
 import AbsencesTable from "components/AbsencesTable";
 import Modal from ".";
 
-const IndavidualAbsencesModal = () => {
+const IndavidualAbsencesModal: FC = () => {
   const { conflicts } = useBrightHrApi();
   const {
     selectedEmployeeId,

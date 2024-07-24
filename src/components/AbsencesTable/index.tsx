@@ -1,3 +1,4 @@
+import { FC } from "react";
 import AbsencesTableRow from "./AbsencesTableRow";
 import { IAbsence, IConflict } from "types";
 
@@ -9,11 +10,11 @@ interface IAbsencesTable {
   enabledEmployeeSelection?: boolean;
 }
 
-const AbsencesTable = ({
+const AbsencesTable: FC<IAbsencesTable> = ({
   absences,
   conflicts,
   enabledEmployeeSelection = false,
-}: IAbsencesTable) => {
+}) => {
   return (
     <>
       <div className="absences-table">

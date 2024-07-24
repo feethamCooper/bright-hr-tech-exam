@@ -1,3 +1,4 @@
+import { FC } from "react";
 import useEmployeeSelection from "hooks/useEmployeeSelection";
 import { DateTime } from "luxon";
 import { ABSENCE_TYPES } from "utils/constants";
@@ -9,11 +10,11 @@ interface IAbsencesTableRow {
   enabledEmployeeSelection: boolean;
 }
 
-const AbsencesTableRow = ({
+const AbsencesTableRow: FC<IAbsencesTableRow> = ({
   absence,
   conflicts,
   enabledEmployeeSelection,
-}: IAbsencesTableRow) => {
+}) => {
   const { setSelectedEmployeeId } = useEmployeeSelection();
   const luxonDateObject = DateTime.fromSeconds(absence.startDate);
   const conflicting = conflicts?.find(

@@ -1,7 +1,8 @@
+import { FC } from "react";
 import useSort from "hooks/useSort";
 import { SORT_BY } from "utils/constants";
 
-const AbsencesSort = () => {
+const AbsencesSort: FC = () => {
   const { sortBy, setSortBy } = useSort();
   const sortByKeys = Object.keys(SORT_BY) as unknown as [keyof typeof SORT_BY];
 
