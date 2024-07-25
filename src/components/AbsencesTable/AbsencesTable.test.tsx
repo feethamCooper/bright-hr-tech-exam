@@ -46,7 +46,7 @@ describe("AbsencesTable component", () => {
     );
     expect(
       // eslint-disable-next-line testing-library/no-container, testing-library/no-node-access
-      container.getElementsByClassName("absences-table__tr--conflict").length
+      container.querySelectorAll(".absences-table__tr--conflict").length
     ).toBe(1);
   });
 });
