@@ -1,4 +1,4 @@
-import { API_QUERIES, BRIGHT_HR_API_BASE } from "./constants";
+import { API_QUERIES } from "./constants";
 
 export const mockGetAbsenceResponse = [
   {

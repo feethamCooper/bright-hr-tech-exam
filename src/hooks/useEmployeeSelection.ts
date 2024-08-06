@@ -1,7 +1,7 @@
+import { useMemo } from "react";
 import { create } from "zustand";
 import useBrightHrApi from "hooks/useBrightHrApi";
 import { IUseEmployeeSelection } from "types";
-import { useMemo } from "react";
 
 const useEmployeeSelectionStore = create<IUseEmployeeSelection>((set) => ({
   selectedEmployeeId: undefined,
