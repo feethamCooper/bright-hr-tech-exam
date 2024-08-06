@@ -50,7 +50,9 @@ const AbsencesTableRow: FC<IAbsencesTableRow> = ({
       <td className="absences-table__td">
         {luxonDateObject.plus({ days: absence.days }).toFormat("dd MMM yyyy")}
       </td>
-      <td>{conflicting?.conflicts ? "Yes" : "No"}</td>
+      <td className="absences-table__td">
+        {conflicting?.conflicts ? "Yes" : "No"}
+      </td>
     </tr>
   );
 };
