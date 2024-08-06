@@ -1,6 +1,6 @@
 import { FC } from "react";
-import useEmployeeSelection from "hooks/useEmployeeSelection";
 import { DateTime } from "luxon";
+import useEmployeeSelection from "hooks/useEmployeeSelection";
 import { ABSENCE_TYPES } from "utils/constants";
 import { IAbsence, IConflict } from "types";
 
